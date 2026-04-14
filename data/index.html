@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tire Diagnostic Node</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="header">
+        <h1>Diagnostic Node UI</h1>
+        <button class="scan-btn" id="main-scan-btn" onclick="startScan()">START DIAGNOSTIC SCAN</button>
+    </div>
+    
+    <div class="dashboard">
+        <div class="card">
+            <div style="font-size: 0.85rem; color: #94a3b8; margin-bottom: 12px; text-transform: uppercase; font-weight: 600;">Live Camera Feed</div>
+            <div class="cam-feed">
+                <span id="cam-text">OV2640 STREAM</span>
+                <span class="scanning-overlay" id="scan-overlay">HARDWARE SCANNING...</span>
+            </div>
+        </div>
+        
+        <div class="card" style="display: flex; flex-direction: column;">
+            <div class="stats-grid">
+                <div class="stat-box">
+                    <div class="stat-title">AI Classification</div>
+                    <div class="stat-value" id="ai-verdict" style="color: #94a3b8;">--</div>
+                    <div style="font-size: 0.8rem; color: #94a3b8; margin-top: 5px;" id="ai-conf">Conf: --%</div>
+                </div>
+                <div class="stat-box">
+                    <div class="stat-title">Tread Depth</div>
+                    <div class="stat-value" id="tof-depth" style="color: #94a3b8;">-- mm</div>
+                    <div style="font-size: 0.8rem; color: #94a3b8; margin-top: 5px;">VL53L0X</div>
+                </div>
+            </div>
+            <div class="status-indicator idle" id="system-status" style="flex-grow: 1;">
+                READY TO SCAN
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
